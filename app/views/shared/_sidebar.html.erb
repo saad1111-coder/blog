@@ -1,0 +1,11 @@
+<div class="sidebar">
+    <% if user_signed_in? then %>
+       <div>
+           <a><%= current_user.email %></a>
+       </div>
+    <% end %>
+    <a class="active" href="#home">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>

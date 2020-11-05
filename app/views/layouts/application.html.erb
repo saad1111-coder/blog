@@ -72,13 +72,9 @@ div.content {
   </head>
 
   <body>
-    <div class="sidebar">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
-    
+   <% if user_signed_in? then %>
+     <%= render '../views/shared/sidebar' %>
+    <% end %>
     <div class="content">
       
       <%= yield %>

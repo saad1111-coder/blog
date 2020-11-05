@@ -6,14 +6,22 @@
                 <%=  link_to post.title, post %>
             </div>
             <div class="card-body">
-              <h5 class="card-title"><%=  post.title %></h5>
-              <p class="card-text"> <%= post.content %></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title"><%=  post.title %></h5>
+                  <p class="card-text"> <%= post.content %></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-          </div>
-            
-        <% end %>
-
+        </div>
+                
+            <% end %>
+            <% if user_signed_in? %>
+            <li>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+            </li>
+            <% else %>
+            <li>
+            <%= link_to('Login', new_user_session_path) %>  
+            </li>
+            <% end %>
         
     </div>
 </section>
